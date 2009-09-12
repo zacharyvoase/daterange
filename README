@@ -1,0 +1,59 @@
+<!--*-markdown-*-->
+# Daterange: Like `xrange()`, but for `datetime` objects.
+
+## Example Usage
+
+    >>> import datetime
+    >>> start = datetime.date(2009, 6, 21)
+
+    >>> g1 = daterange(start)
+    >>> g1.next()
+    datetime.date(2009, 6, 21)
+    >>> g1.next()
+    datetime.date(2009, 6, 22)
+    >>> g1.next()
+    datetime.date(2009, 6, 23)
+    >>> g1.next()
+    datetime.date(2009, 6, 24)
+    >>> g1.next()
+    datetime.date(2009, 6, 25)
+    >>> g1.next()
+    datetime.date(2009, 6, 26)
+
+    >>> g2 = daterange(start, to=datetime.date(2009, 6, 25))
+    >>> g2.next()
+    datetime.date(2009, 6, 21)
+    >>> g2.next()
+    datetime.date(2009, 6, 22)
+    >>> g2.next()
+    datetime.date(2009, 6, 23)
+    >>> g2.next()
+    datetime.date(2009, 6, 24)
+    >>> g2.next()
+    datetime.date(2009, 6, 25)
+    >>> g2.next()
+    Traceback (most recent call last):
+    ...
+    StopIteration
+
+    >>> g3 = daterange(start, step='2 days')
+    >>> g3.next()
+    datetime.date(2009, 6, 21)
+    >>> g3.next()
+    datetime.date(2009, 6, 23)
+    >>> g3.next()
+    datetime.date(2009, 6, 25)
+    >>> g3.next()
+    datetime.date(2009, 6, 27)
+
+    >>> g4 = daterange(start, to=datetime.date(2009, 6, 25), step='2 days')
+    >>> g4.next()
+    datetime.date(2009, 6, 21)
+    >>> g4.next()
+    datetime.date(2009, 6, 23)
+    >>> g4.next()
+    datetime.date(2009, 6, 25)
+    >>> g4.next()
+    Traceback (most recent call last):
+    ...
+    StopIteration

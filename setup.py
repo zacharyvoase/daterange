@@ -9,6 +9,6 @@ setup(
     description='Like xrange(), but for datetime objects.',
     author='Zachary Voase',
     author_email='zacharyvoase@me.com',
-    url='http://bitbucket.org/zacharyvoase/daterange/',
+    url='http://github.com/zacharyvoase/daterange',
     packages=['daterange'],
 )

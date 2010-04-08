@@ -1,6 +1,4 @@
-<!--*-markdown-*-->
-
-# Daterange
+# `daterange`
 
 Like `xrange()`, but for `datetime` objects.
 
